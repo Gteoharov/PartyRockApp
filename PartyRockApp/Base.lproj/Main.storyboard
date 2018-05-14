@@ -27,20 +27,56 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-JD-Xpf">
                                 <rect key="frame" x="0.0" y="175" width="375" height="38"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCm-ge-gqy">
-                                        <rect key="frame" x="0.0" y="4" width="88" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Top Videos">
-                                            <color key="titleColor" red="0.80784313730000001" green="0.098039215690000001" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RUe-7p-RoB">
+                                        <rect key="frame" x="8" y="2" width="359" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCm-ge-gqy">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="36"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Top Videos">
+                                                    <color key="titleColor" red="0.80784313730000001" green="0.098039215690000001" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjC-p1-Lf0">
+                                                <rect key="frame" x="119.66666666666666" y="0.0" width="119.66666666666666" height="36"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Top Songs">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCS-Vt-6wY">
+                                                <rect key="frame" x="239.33333333333334" y="0.0" width="119.66666666666666" height="36"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Events">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.50652825342465757" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="RUe-7p-RoB" firstAttribute="top" secondItem="b9A-JD-Xpf" secondAttribute="top" constant="2" id="7y1-6e-ZB7"/>
+                                    <constraint firstAttribute="trailing" secondItem="RUe-7p-RoB" secondAttribute="trailing" constant="8" id="YB9-mS-BPC"/>
+                                    <constraint firstItem="RUe-7p-RoB" firstAttribute="leading" secondItem="b9A-JD-Xpf" secondAttribute="leading" constant="8" id="nmr-lW-2l3"/>
                                     <constraint firstAttribute="height" constant="38" id="ztb-4N-VUJ"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0dL-56-jtr">
+                                <rect key="frame" x="0.0" y="213" width="375" height="599"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="P9p-dr-fQ9">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9p-dr-fQ9" id="Mvi-bV-5xP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,8 +84,12 @@
                             <constraint firstItem="u92-h1-etB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LzU-X4-UPM"/>
                             <constraint firstItem="u92-h1-etB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PeL-J2-E4N"/>
                             <constraint firstItem="b9A-JD-Xpf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RhJ-sK-2be"/>
+                            <constraint firstAttribute="bottom" secondItem="0dL-56-jtr" secondAttribute="bottom" id="Vvu-No-zUB"/>
                             <constraint firstItem="u92-h1-etB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YeD-vp-YuL"/>
+                            <constraint firstItem="0dL-56-jtr" firstAttribute="top" secondItem="b9A-JD-Xpf" secondAttribute="bottom" id="ZhZ-WS-aDR"/>
+                            <constraint firstItem="0dL-56-jtr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d8t-ID-a1v"/>
                             <constraint firstItem="b9A-JD-Xpf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dKA-Qw-nfp"/>
+                            <constraint firstItem="0dL-56-jtr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="occ-nj-kPn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
