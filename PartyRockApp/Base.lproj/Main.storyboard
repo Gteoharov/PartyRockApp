@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="still time.ttf">
+            <string>StillTime-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -66,14 +72,38 @@
                                 <rect key="frame" x="0.0" y="213" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="P9p-dr-fQ9">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="74"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="P9p-dr-fQ9">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9p-dr-fQ9" id="Mvi-bV-5xP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-2E-Mgd">
+                                                    <rect key="frame" x="10" y="13" width="52" height="52"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="52" id="f9x-xE-3yl"/>
+                                                        <constraint firstAttribute="height" constant="52" id="jch-9C-1gW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Late night tip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijb-LF-ltP">
+                                                    <rect key="frame" x="70" y="13" width="290" height="52"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="52" id="YW6-XI-jQO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TRb-2E-Mgd" firstAttribute="leading" secondItem="Mvi-bV-5xP" secondAttribute="leading" constant="10" id="H0i-H1-2Lu"/>
+                                                <constraint firstItem="Ijb-LF-ltP" firstAttribute="leading" secondItem="TRb-2E-Mgd" secondAttribute="trailing" constant="8" id="ejr-56-fwu"/>
+                                                <constraint firstItem="Ijb-LF-ltP" firstAttribute="trailing" secondItem="Mvi-bV-5xP" secondAttribute="trailingMargin" id="gw0-E2-srh"/>
+                                                <constraint firstItem="Ijb-LF-ltP" firstAttribute="centerY" secondItem="Mvi-bV-5xP" secondAttribute="centerY" id="sKZ-0Z-Xhy"/>
+                                                <constraint firstItem="TRb-2E-Mgd" firstAttribute="centerY" secondItem="Mvi-bV-5xP" secondAttribute="centerY" id="saR-49-aPN"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -93,10 +123,46 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="Dlk-xe-zN3" kind="showDetail" identifier="VideoVC" id="191-pc-fgw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
+        </scene>
+        <!--VideoVC-->
+        <scene sceneID="uz6-dD-Y4K">
+            <objects>
+                <viewController id="Dlk-xe-zN3" customClass="VideoVC" customModule="PartyRockApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7X7-wk-JsX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlS-yR-Nom">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="nww-Gr-WRv"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AlS-yR-Nom" firstAttribute="leading" secondItem="r4G-zP-tAQ" secondAttribute="leading" id="KUS-kK-Ied"/>
+                            <constraint firstItem="AlS-yR-Nom" firstAttribute="top" secondItem="7X7-wk-JsX" secondAttribute="top" id="NzU-rB-MtF"/>
+                            <constraint firstItem="AlS-yR-Nom" firstAttribute="trailing" secondItem="r4G-zP-tAQ" secondAttribute="trailing" id="lI9-bx-gVV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r4G-zP-tAQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPH-5p-juW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="132.26600985221674"/>
         </scene>
     </scenes>
     <resources>
