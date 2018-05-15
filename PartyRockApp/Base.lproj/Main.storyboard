@@ -72,7 +72,7 @@
                                 <rect key="frame" x="0.0" y="213" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="P9p-dr-fQ9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="80" id="P9p-dr-fQ9" customClass="PartyCell" customModule="PartyRockApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9p-dr-fQ9" id="Mvi-bV-5xP">
@@ -104,6 +104,10 @@
                                                 <constraint firstItem="TRb-2E-Mgd" firstAttribute="centerY" secondItem="Mvi-bV-5xP" secondAttribute="centerY" id="saR-49-aPN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="TRb-2E-Mgd" id="UJ8-z8-kqh"/>
+                                            <outlet property="videoTitle" destination="Ijb-LF-ltP" id="0B7-mZ-Qqj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -124,6 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="0dL-56-jtr" id="zU2-9E-M1z"/>
                         <segue destination="Dlk-xe-zN3" kind="showDetail" identifier="VideoVC" id="191-pc-fgw"/>
                     </connections>
                 </viewController>
@@ -150,15 +155,31 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-f8-Akf">
+                                <rect key="frame" x="16" y="305" width="343" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="BNm-Pd-BU3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="A7d-f8-Akf" firstAttribute="top" secondItem="AlS-yR-Nom" secondAttribute="bottom" constant="50" id="503-Bz-02O"/>
                             <constraint firstItem="AlS-yR-Nom" firstAttribute="leading" secondItem="r4G-zP-tAQ" secondAttribute="leading" id="KUS-kK-Ied"/>
                             <constraint firstItem="AlS-yR-Nom" firstAttribute="top" secondItem="7X7-wk-JsX" secondAttribute="top" id="NzU-rB-MtF"/>
+                            <constraint firstItem="A7d-f8-Akf" firstAttribute="leading" secondItem="r4G-zP-tAQ" secondAttribute="leading" constant="16" id="d29-qY-GIH"/>
                             <constraint firstItem="AlS-yR-Nom" firstAttribute="trailing" secondItem="r4G-zP-tAQ" secondAttribute="trailing" id="lI9-bx-gVV"/>
+                            <constraint firstItem="r4G-zP-tAQ" firstAttribute="trailing" secondItem="A7d-f8-Akf" secondAttribute="trailing" constant="16" id="mf9-DY-Hhv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r4G-zP-tAQ"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLbl" destination="A7d-f8-Akf" id="CE9-uk-X9L"/>
+                        <outlet property="webView" destination="AlS-yR-Nom" id="i2Y-dQ-ilK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPH-5p-juW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
